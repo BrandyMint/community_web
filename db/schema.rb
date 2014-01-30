@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140130080632) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
+    t.string   "position"
     t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
