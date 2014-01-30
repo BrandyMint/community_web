@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140130080632) do
   add_index "cities", ["place_id"], name: "index_cities_on_place_id", using: :btree
 
   create_table "discounts", force: true do |t|
+    t.string   "name"
     t.string   "text"
     t.datetime "created_at"
     t.datetime "updated_at"

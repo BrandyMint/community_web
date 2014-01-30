@@ -9,6 +9,7 @@ class CreatePlacesAndDiscounts < ActiveRecord::Migration
     end
 
     create_table :discounts do |t|
+      t.string :name
       t.string :text
 
       t.timestamps
