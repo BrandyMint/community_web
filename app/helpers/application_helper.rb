@@ -25,4 +25,8 @@ module ApplicationHelper
     content_tag :span, count, options
   end
 
+  def current_city
+    City.find_by(name: I18n.t('default_city'))
+  end
+
 end
