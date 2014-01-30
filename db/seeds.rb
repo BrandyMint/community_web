@@ -1,4 +1,5 @@
-city = City.create(name: I18n.t('default_city'), position: '56.156733,47.3940999')
+city = City.create(name: I18n.t('default_city'), position: '56.133725,47.233418')
+City.create(name: 'Казань', position: '55.8005556,49.1055556')
 discount = Discount.create(name: 'Superdiscount only once in whole life!', text: 'Discount 99%')
 
 [

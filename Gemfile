@@ -121,6 +121,11 @@ gem 'coffee-rails', github: 'rails/coffee-rails'
 
 # gem 'select2-rails'
 
+group :assets do
+  gem 'haml_coffee_assets'
+  gem 'execjs'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

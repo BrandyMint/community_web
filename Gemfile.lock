@@ -237,6 +237,10 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    haml_coffee_assets (1.15.1)
+      coffee-script (>= 1.0.0)
+      sprockets (>= 2.0.3)
+      tilt (>= 1.3.3)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -546,6 +550,7 @@ DEPENDENCIES
   cucumber-rails (>= 1.3.0)
   database_cleaner
   email_spec (>= 1.2.1)
+  execjs
   factory_girl_rails
   fakeredis
   foreman
@@ -558,6 +563,7 @@ DEPENDENCIES
   guard-rspec
   guard-spork
   haml-rails
+  haml_coffee_assets
   hashie
   holepicker
   hpricot (>= 0.8.6)

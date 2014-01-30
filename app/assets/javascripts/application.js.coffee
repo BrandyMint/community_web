@@ -1,26 +1,26 @@
 #= require jquery
-#= require jquery_ujs
-#= require jquery.turbolinks
-#= require turbolinks
-#= require bootstrap
-#= require_tree .
 
-# require jquery.freetile
 # require jquery_ujs
-# require jquery-ui
-# require jquery.ui.datepicker-ru
-# require select2
-# require jquery_nested_form
-#
-# sass-ный jquery
-# require jquery.ui.all
+# require jquery.turbolinks
+# require turbolinks
+
+#= require jquery.role/lib/jquery.role
+#= require underscore/underscore
+#= require backbone/backbone
+#= require backbone.route-helper/backbone.route-helper
+#= require backbone.marionette/lib/backbone.marionette
+#= require hamlcoffee
+#= require bootstrap
+
+#= require namespaces
+#= require_tree ./app/helpers
+#= require_tree ./app/services
+#= require_tree ./app/controllers
+#= require_tree ./app/routers
+#= require_tree ./app/templates
+#= require_tree ./app/views
+#= require core
+#= require_self
 
 $ ->
-  # $('#freetile').freetile()
-  # $('input.ui-date-picker').datepicker()
-  # $('input.ui-datetime-picker').datetimepicker()
-  # $('input.select2').select2()
-  # $('select.select2').select2
-  #  width: 'element'
-
-  return
+  window.Community.App.start()

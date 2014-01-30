@@ -6,6 +6,7 @@ Community::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'welcome#index'
+  resources :cities, :controller => :welcome, :action => :index
 
 
   # Example of regular route:

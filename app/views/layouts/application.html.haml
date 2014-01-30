@@ -17,7 +17,5 @@
           .row
             .col-md-12
               = render 'layouts/messages'
-              = yield
-      %footer.footer
-        .container
-          %small.muted= app_version
+    = yield
+    %div.community-container{:role => "community-container"}

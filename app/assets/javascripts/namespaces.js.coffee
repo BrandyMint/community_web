@@ -1,0 +1,9 @@
+window.Community =
+  Models:      {}
+  Collections: {}
+  Controllers: {}
+  Helpers:     {}
+  Views:       {}
+  Routers:     {}
+  Services:    {}
+  Observers:   {}

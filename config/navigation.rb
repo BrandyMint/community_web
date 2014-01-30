@@ -7,6 +7,12 @@ SimpleNavigation::Configuration.run do |navigation|
 
     primary.dom_class = 'nav navbar-nav pull-right'
 
+    primary.item '#cities', current_city.name do |inner|
+      City.find_each do |city|
+        inner.item city.id, city.name, city_path(city)
+      end
+    end
+
     # you can turn off auto highlighting for a specific level
     primary.auto_highlight = true
   end

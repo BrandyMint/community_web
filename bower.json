@@ -2,8 +2,11 @@
   "name": "convead",
   "version": "0.3",
   "dependencies": {
+    "jquery.role": "git://github.com/kossnocorp/role",
+    "underscore": "latest",
     "backbone": "latest",
     "backbone.marionette": "latest",
+    "backbone.route-helper": "git://github.com/mojotech/backbone.route-helper",
     "editable-bootstrap": "git://github.com/BrandyMint/bootstrap-editable.git"
   },
   "ignore": [

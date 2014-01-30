@@ -26,7 +26,16 @@ module ApplicationHelper
   end
 
   def current_city
-    City.find_by(name: I18n.t('default_city'))
+    City.where(id: params[:id]).first() || City.first
+  end
+
+  def setup_markers
+    places = Place.by_city current_city
+    javascript_tag "window.Community.Markers = #{places.to_json};"
+  end
+
+  def setup_city
+    javascript_tag "window.Community.City = #{current_city.to_json};"
   end
 
 end
