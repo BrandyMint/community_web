@@ -1,0 +1,14 @@
+{
+  "name": "convead",
+  "version": "0.3",
+  "dependencies": {
+    "backbone": "latest",
+    "backbone.marionette": "latest",
+    "editable-bootstrap": "git://github.com/BrandyMint/bootstrap-editable.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
