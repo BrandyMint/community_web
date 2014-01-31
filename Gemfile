@@ -1,7 +1,4 @@
-source 'https://rubygems.org'
-
-# Use unicorn as the app server
-gem 'unicorn'
+source 'http://rubygems.org'
 
 gem 'rails', '~> 4.0.0'
 #gem 'rails',     github: 'rails/rails'
@@ -236,9 +233,9 @@ group :test do
 end
 
 group :deploy do
-  gem 'capistrano', '~> 3.0', :require => false
-  gem 'capistrano-rbenv', '~> 2.0', :require => false
-  gem 'capistrano-rails', '~> 1.1.0', :require => false
+  gem 'capistrano', '~> 3.1', :require => false
+  gem 'capistrano-rbenv', '~> 2.0',  :require => false
+  gem 'capistrano-rails', '~> 1.1', :require => false
   gem 'capistrano-bundler', :require => false
 end
 

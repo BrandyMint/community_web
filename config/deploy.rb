@@ -1,9 +1,11 @@
-set :application, 'HOSTNAME'
-set :repo_url, 'REPO' #git@github.com:BrandyMint/zagorod.git'
+lock '3.1.0'
+
+set :application, 'community.icfdev.ru'
+set :repo_url, 'git@github.com:BrandyMint/community_web.git'
 
 #ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, ->{"/home/USERNAME/#{fetch(:application)}"}
+set :deploy_to, ->{"/home/wwwcommunity/#{fetch(:application)}"}
 set :scm, :git
 
 # set :format, :pretty
@@ -16,7 +18,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.0.0-p353'
+set :rbenv_ruby, '2.1.0'
 
 set :bundle_without, %w{development test deploy}.join(' ')
 
@@ -52,6 +54,7 @@ namespace :deploy do
     end
   end
 
+  after :publishing, :restart
   after :finishing, 'deploy:cleanup'
   after :finishing, 'deploy:notify'
 
