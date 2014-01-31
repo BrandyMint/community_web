@@ -2,10 +2,10 @@ defaults: &defaults
   app:
     title: Community
 
-    asset_host: http://Community.icfdev.ru/
+    asset_host: http://community.icfdev.ru/
 
     default_url_options: &default_url_options
-      host: HOSTNAME
+      host: community.icfdev.ru
       port: 80
 
   action_mailer: &action_mailer
@@ -14,8 +14,8 @@ defaults: &defaults
       <<: *default_url_options
 
   mailer_defaults: &mailer_defaults
-    from: 'noreply@HOSTNAME'
-    host: HOSTNAME
+    from: 'noreply@community.icfdev.ru'
+    host: community.icfdev.ru
 
 development:
   <<: *defaults
