@@ -1,11 +1,11 @@
 class Community.Services.Markers
 
   constructor: (mapService) ->
+    @mapService = mapService
     @map = mapService.map
     @infoBox = mapService.infoBox
     @markersData = mapService.markersData
     @activeMarker = mapService.activeMarker
-    # @markersArray = []
 
     @_addMarkers()
 
@@ -16,9 +16,8 @@ class Community.Services.Markers
   _createMarker: (data) ->
     marker = new google.maps.Marker
       map: @map
-      position: @parseCoordinates data.position
+      position: @mapService.parseCoordinates data.position
       title: data.name
-    # @markersArray.push marker
 
     google.maps.event.addListener marker, 'click', (event) =>
       @_openMarkerInfoBox marker, data.name
@@ -31,7 +30,3 @@ class Community.Services.Markers
       @activeMarker = marker
       @infoBox.setContent content
       @infoBox.open(@map, @activeMarker)
-
-  parseCoordinates: (string) ->
-    coords = string.split(',').map (c) -> parseFloat(c)
-    new google.maps.LatLng coords[0], coords[1]

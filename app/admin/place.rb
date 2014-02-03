@@ -3,8 +3,8 @@ ActiveAdmin.register Place do
   form do |f|
     f.inputs "Fields" do
       f.input :name
-      f.input :position
       f.input :discounts
+      f.input :position, :as => :map
     end
     f.actions
   end
