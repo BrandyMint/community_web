@@ -45,6 +45,15 @@ namespace :deploy do
     end
   end
 
+  desc 'Bower install'
+  task :bowerinstall do
+    on roles(:app), in: :sequence do
+      within release_path do
+        execute :bower, 'install'
+      end
+    end
+  end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -54,6 +63,7 @@ namespace :deploy do
     end
   end
 
+  before :compile_assets, :bowerinstall
   after :publishing, :restart
   after :finishing, 'deploy:cleanup'
   after :finishing, 'deploy:notify'
