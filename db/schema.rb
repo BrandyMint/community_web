@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130080632) do
+ActiveRecord::Schema.define(version: 20140204093006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,31 +49,58 @@ ActiveRecord::Schema.define(version: 20140130080632) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "categories", force: true do |t|
+    t.integer  "discount_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["discount_id"], name: "index_categories_on_discount_id", using: :btree
+  add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
+
+  create_table "categories_discounts", id: false, force: true do |t|
+    t.integer "category_id", null: false
+    t.integer "discount_id", null: false
+  end
+
   create_table "cities", force: true do |t|
     t.string   "name"
     t.string   "position"
-    t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "cities", ["name"], name: "index_cities_on_name", unique: true, using: :btree
-  add_index "cities", ["place_id"], name: "index_cities_on_place_id", using: :btree
 
   create_table "discounts", force: true do |t|
+    t.string   "subject"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "kind_cd"
+    t.integer  "firm_id"
+    t.integer  "category_id"
+    t.datetime "start_at"
+    t.datetime "finish_at"
+  end
+
+  add_index "discounts", ["category_id"], name: "index_discounts_on_category_id", using: :btree
+  add_index "discounts", ["firm_id"], name: "index_discounts_on_firm_id", using: :btree
+
+  create_table "firms", force: true do |t|
+    t.integer  "place_id"
     t.string   "name"
-    t.string   "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "discounts_places", force: true do |t|
-    t.integer "place_id"
-    t.integer "discount_id"
-  end
+  add_index "firms", ["place_id"], name: "index_firms_on_place_id", using: :btree
 
-  add_index "discounts_places", ["discount_id"], name: "index_discounts_places_on_discount_id", using: :btree
-  add_index "discounts_places", ["place_id"], name: "index_discounts_places_on_place_id", using: :btree
+  create_table "firms_places", id: false, force: true do |t|
+    t.integer "firm_id",  null: false
+    t.integer "place_id", null: false
+  end
 
   create_table "places", force: true do |t|
     t.string   "name"
@@ -81,8 +108,10 @@ ActiveRecord::Schema.define(version: 20140130080632) do
     t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "firm_id"
   end
 
   add_index "places", ["city_id"], name: "index_places_on_city_id", using: :btree
+  add_index "places", ["firm_id"], name: "index_places_on_firm_id", using: :btree
 
 end

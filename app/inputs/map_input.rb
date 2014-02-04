@@ -1,7 +1,7 @@
 class MapInput < Formtastic::Inputs::StringInput
 
   def markers_data
-    "<script>window.Community.Markers = #{object.slice(:name,:position).to_json};</script>".html_safe
+    "<script>window.Community.Markers = #{object.slice(:position).to_json};</script>".html_safe
   end
 
   def input_map

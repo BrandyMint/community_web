@@ -3,7 +3,6 @@ class CreateCities < ActiveRecord::Migration
     create_table :cities do |t|
       t.string :name
       t.string :position
-      t.references :place, index: true
 
       t.timestamps
     end

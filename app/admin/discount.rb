@@ -2,9 +2,13 @@ ActiveAdmin.register Discount do
 
   form do |f|
     f.inputs "Fields" do
-      f.input :name
-      f.input :text
-      f.input :places
+      f.input :subject
+      f.input :description
+      f.input :start_at, :as => :datepicker
+      f.input :finish_at, :as => :datepicker
+      f.input :kind, :collection => Discount.kinds.keys, :allow_blank => false
+      f.input :firm
+      f.input :categories
     end
     f.actions
   end
@@ -12,7 +16,7 @@ ActiveAdmin.register Discount do
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :name, :text, place_ids: []
+  permit_params :subject, :description, :start_at, :finish_at, :kind, :firm, category_ids: []
   #
   # or
   #

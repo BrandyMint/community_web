@@ -7,7 +7,8 @@
     "backbone": "latest",
     "backbone.marionette": "latest",
     "backbone.route-helper": "git://github.com/mojotech/backbone.route-helper",
-    "editable-bootstrap": "git://github.com/BrandyMint/bootstrap-editable.git"
+    "editable-bootstrap": "git://github.com/BrandyMint/bootstrap-editable.git",
+    "select2": "latest"
   },
   "ignore": [
     "**/.*",
