@@ -18,6 +18,7 @@ class Community.Services.Markers
       map: @map
       position: @mapService.parseCoordinates data.position
       title: data.name
+      icon: '/assets/marker.png'
 
     google.maps.event.addListener marker, 'click', (event) =>
       @_openMarkerInfoBox marker, data.name
