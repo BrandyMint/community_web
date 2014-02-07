@@ -24,6 +24,8 @@ module Community
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     I18n.locale = config.i18n.default_locale = :ru
 
+    config.active_record.observers = :discount_observer
+
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end

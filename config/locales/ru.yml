@@ -46,6 +46,9 @@ ru:
       firm:
         one: Организация
         other: Организации
+      discount_feed:
+        one: Лента скидок
+        other: Лента скидок
     attributes:
       discount:
         subject: Название
@@ -75,6 +78,14 @@ ru:
         position: Координаты
         places: Места
         firms: Организации
+      discount_feed:
+        published: Публиковать
+        discount: Скидка
+        cities: Города
+  discount:
+    kinds:
+      discount: Скидка
+      sale: Акция
   form_objects:
     errors:
       messages:

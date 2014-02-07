@@ -111,6 +111,8 @@ gem 'uglifier', '~> 1.3'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', github: 'rails/coffee-rails'
 
+gem 'rails-observers'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

@@ -1,2 +1,6 @@
 = setup_city
 = setup_markers
+%div.community-container{:role => "community-container"}
+- if @feed.present?
+  %ul.discount-feed.list-group
+    = render partial: 'feed_item', collection: @feed

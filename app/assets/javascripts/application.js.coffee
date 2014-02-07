@@ -23,4 +23,5 @@
 #= require_self
 
 $ ->
-  window.Community.App.start()
+  if ('@community-container').length > 0
+    window.Community.App.start()

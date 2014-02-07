@@ -1,0 +1,8 @@
+%li.list-group-item
+  = link_to feed_item.discount do
+    = image_tag('marker.png')
+    = I18n.t("discount.kinds.#{feed_item.discount.kind}")
+    %br/
+    = feed_item.discount.subject
+    %br/
+    = feed_item.discount.firm.name

@@ -7,6 +7,7 @@ Community::Application.routes.draw do
 
   root 'welcome#index'
   resources :cities, :controller => :welcome, :action => :index
+  resources :discounts, :only => :show
 
 
   # Example of regular route:

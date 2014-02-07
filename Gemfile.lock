@@ -383,6 +383,8 @@ GEM
       activesupport (>= 3.0)
       choice (~> 0.1.6)
       ruby-graphviz (~> 1.0.4)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
     railties (4.0.2)
       actionpack (= 4.0.2)
       activesupport (= 4.0.2)
@@ -597,6 +599,7 @@ DEPENDENCIES
   quiet_assets
   rails (~> 4.0.0)
   rails-erd
+  rails-observers
   rb-fsevent (~> 0.9.1)
   rb-inotify (~> 0.9)
   recipient_interceptor

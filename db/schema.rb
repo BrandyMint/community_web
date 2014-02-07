@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207083938) do
+ActiveRecord::Schema.define(version: 20140207112000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,20 @@ ActiveRecord::Schema.define(version: 20140207083938) do
   end
 
   add_index "cities", ["name"], name: "index_cities_on_name", unique: true, using: :btree
+
+  create_table "cities_discount_feeds", id: false, force: true do |t|
+    t.integer "city_id",          null: false
+    t.integer "discount_feed_id", null: false
+  end
+
+  create_table "discount_feeds", force: true do |t|
+    t.integer  "discount_id"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "discount_feeds", ["discount_id"], name: "index_discount_feeds_on_discount_id", using: :btree
 
   create_table "discounts", force: true do |t|
     t.string   "subject"
