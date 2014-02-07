@@ -1,7 +1,7 @@
 ActiveAdmin.register Discount do
 
   form do |f|
-    f.inputs "Fields" do
+    f.inputs do
       f.input :subject
       f.input :description
       f.input :start_at, :as => :datepicker

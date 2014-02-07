@@ -24,11 +24,57 @@ ru:
       human: '%e %B %Y'
       input: '%e/%m/%Y'
   activerecord:
+    address: Адрес
     errors:
       messages:
         record_invalid: Испорченная запись
         invalid_range: Дата окончания периода должна быть больше даты начала
         intersection: Период пересекается с другим (id = %{id})
+    models:
+      discount:
+        one: Скидка
+        other: Скидки
+      category:
+        one: Категория
+        other: Категории
+      city:
+        one: Города
+        other: Города
+      place:
+        one: Место
+        other: Места
+      firm:
+        one: Организация
+        other: Организации
+    attributes:
+      discount:
+        subject: Название
+        description: Описание
+        start_at: Дата начала
+        finish_at: Дата окончания
+        kind: Вид
+        kind_cd: Вид
+        firm: Организация
+        categories: Категории
+      place:
+        name: Название
+        city: Город
+        position: Координаты
+        firms: Организации
+        discounts: Скидки
+      category:
+        name: Название
+        firms: Организации
+        discounts: Скидки
+      firm:
+        name: Название
+        places: Места
+        discounts: Скидки
+      city:
+        name: Название
+        position: Координаты
+        places: Места
+        firms: Организации
   form_objects:
     errors:
       messages:

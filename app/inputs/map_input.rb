@@ -5,9 +5,9 @@ class MapInput < Formtastic::Inputs::StringInput
   end
 
   def input_map
-    '<label for="adr" class="adr">Address:</label>
-    <input id="adr" type="text" name="" class="map-input-address adr" role="map-input-address" />
-    <div class="map-input" role="map-input"></div>'.html_safe
+    "<label for=\"adr\" class=\"adr\">#{I18n.t('activerecord.address')}</label>
+    <input id=\"adr\" type=\"text\" name=\"\" class=\"map-input-address adr\" role=\"map-input-address\" />
+    <div class=\"map-input\" role=\"map-input\"></div>".html_safe
   end
 
   def to_html

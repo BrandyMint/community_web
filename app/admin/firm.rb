@@ -1,6 +1,6 @@
 ActiveAdmin.register Firm do
   form do |f|
-    f.inputs "Fields" do
+    f.inputs do
       f.input :name
       f.input :places
     end

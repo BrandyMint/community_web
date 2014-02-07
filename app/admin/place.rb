@@ -1,7 +1,7 @@
 ActiveAdmin.register Place do
 
   form do |f|
-    f.inputs "Fields" do
+    f.inputs do
       f.input :name
       f.input :city
       f.input :position, :as => :map

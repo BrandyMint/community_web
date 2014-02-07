@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
   form do |f|
-    f.inputs "Fields" do
+    f.inputs do
       f.input :name
     end
     f.actions
