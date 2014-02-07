@@ -30,7 +30,7 @@ module ApplicationHelper
   end
 
   def setup_markers
-    places = Place.by_city current_city
+    places = Place.by_city(current_city).map{ |p| p.attributes.merge link: place_url(p) }
     javascript_tag "window.Community.Markers = #{places.to_json};"
   end
 

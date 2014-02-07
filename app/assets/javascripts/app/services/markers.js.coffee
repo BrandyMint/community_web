@@ -21,7 +21,7 @@ class Community.Services.Markers
       icon: '/assets/marker.png'
 
     google.maps.event.addListener marker, 'click', (event) =>
-      @_openMarkerInfoBox marker, data.name
+      window.location = data.link
 
   _openMarkerInfoBox: (marker, content) ->
     if marker is @activeMarker
