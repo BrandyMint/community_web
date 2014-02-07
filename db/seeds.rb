@@ -20,5 +20,5 @@ category = Category.create name: 'Category1'
   Place.create name: "Place#{index+1}", position: position, city: city, firms: [firm]
 end
 
-firm1.discounts.create subject: 'Supersale!', description: 'Sale 50%', kind: 0, start_at: Time.now, finish_at: Time.now+1.year, categories: [category]
-firm2.discounts.create subject: 'Superdiscount!', description: 'Discount 99%', kind: 1, start_at: Time.now, categories: [category]
+firm1.discounts.create subject: 'Supersale!', description: 'Sale 50%', kind: 0, start_at: Time.now, finish_at: Time.now+1.year, category: category
+firm2.discounts.create subject: 'Superdiscount!', description: 'Discount 99%', kind: 1, start_at: Time.now, category: category

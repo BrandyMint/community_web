@@ -8,7 +8,7 @@ ActiveAdmin.register Discount do
       f.input :finish_at, :as => :datepicker
       f.input :kind, :collection => Discount.kinds.keys, :allow_blank => false
       f.input :firm
-      f.input :categories
+      f.input :category
     end
     f.actions
   end
